@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .menu-container, .cart-container {
+            width: 80%;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .menu-item, .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .cart-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Add styles for images */
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+    <title>Simple Billing System</title>
+</head>
+<body>
+    <div class="menu-container">
+        <h2>Menu</h2>
+        <div class="menu-item" data-item="Burger" data-price="5.99">
+            <img src="burger.jpg" alt="Burger">
+            <span>Burger</span>
+            <span>$5.99</span>
+            <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-item="Pizza" data-price="8.99">
+            <img src="pizza.jpg" alt="Pizza">
+            <span>Pizza</span>
+            <span>$8.99</span>
+            <button onclick="addToCart('Pizza', 8.99)">Add to Cart</button>
+        </div>
+        <!-- Add more menu items as needed -->
+    </div>
+
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <ul class="cart-list" id="cartItems"></ul>
+        <p>Total Items: <span id="totalItems">0</span></p>
+        <h2>Total: $<span id="total">0.00</span></h2>
+    </div>
+
+    <script>
+        function addToCart(item, price) {
+            const cartItems = document.getElementById('cartItems');
+            const totalItemsElement = document.getElementById('totalItems');
+            const totalElement = document.getElementById('total');
+
+            // Create a new list item for the cart
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `${item} -
+        }

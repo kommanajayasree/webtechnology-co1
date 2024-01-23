@@ -1,0 +1,98 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: tomato;
+}
+
+.container {
+    font-size: medium;
+    text-align: center;
+    margin-left: 200px;
+}
+.section-heading {
+    color: blue;
+    font-size: medium;
+    margin-top: 2%;
+    text-align: left;
+}
+
+table {
+    width: 60%;
+    height:50%;
+   border-collapse: collapse;
+    margin-top: 3px;
+    border: 1px solid violet;
+    border-radius: 5px;
+}
+
+table td {
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+table td{
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: rgb(39, 35, 35);
+    font-size:20px;
+}
+
+.input-field,
+select,
+textarea {
+    width: 50%;
+    padding: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid violet;
+}
+
+.radio-input,
+.checkbox-input {
+    margin-right: 5px;
+}
+
+.languages-field label {
+    margin-right: 10px;
+}
+
+.select-field {
+    width: 50%;
+}
+
+.submit-button,
+.reset-button {
+    width: 80%;
+    margin-top: 6px;
+    padding: 8px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-button:hover,
+.reset-button:hover {
+    background-color: #45a049;
+}
+
+.button-container {
+    text-align: center;
+}
+.bg {
+  
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCIVvSMPAaTSsMkRqsyDxLk9Snmk3XpfLV1Q&usqp=CAU');
+    height :80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter:blur(20px);;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="regval.css">
+    <h3>REGISTRATION FORM</h3>
+</head>
+
+<body class="bg">
+
+    <div class="container">
+        <form name="myform" method="post" action="#" onsubmit="return f1()">
+            <div class="container">
+                <p class="section-heading">Personal Details:</p>
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" placeholder="Enter your name" class="input-field"></td>
+                        <span id="f_error_msg"></span>
+                    </tr>
+                    <tr>
+                        <td>Email Id</td>
+                        <td><input type="text" name="email" placeholder="Enter your email id" class="input-field"></td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td><input type="password" name="password" placeholder="Enter password" class="input-field"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Gender</td>
+                        <td name="gender"  class="gender-field">
+                            <input type="radio" id="male" class="male" name="gender" class="radio-input">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" class="female" name="gender" class="radio-input">
+                            <label for="female">Female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Languages known</td>
+                        <td  name="lang" class="languages-field">
+                            <input type="checkbox" id="telugu" name="lang" class="checkbox-input">
+                            <label for="telugu">Telugu</label>
+                            <input type="checkbox" id="hindi" name="lang" class="checkbox-input">
+                            <label for="hindi">Hindi</label>
+                            <input type="checkbox" id="english" name="lang" class="checkbox-input">
+                            <label for="english">English</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Religion</td>
+                        <td>
+                            <select name="religion" class="select-field">
+                                <option>Hindu</option>
+                                <option>Christian</option>
+                                <option>Muslim</option>
+                                <option>Jain</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>DOB</td>
+                        <td><input type="date" name="dob" class="input-field"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No</td>
+                        <td><input type="tel" name="ph" placeholder="Enter phone number" class="input-field"></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><textarea rows="3" cols="25" name="add" placeholder="Type your address" class="textarea-field"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+        <div class="container">
+            <p class="section-heading">Educational Details:</p>
+            <table>
+                <tr>
+                    <td>B.Tech%</td>
+                    <td><input type="text" name="bper" placeholder="Type here" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>Intermediate%</td>
+                    <td><input type="text" name="iper" placeholder="Type here" class="input-field"></td>
+                </tr>
+                <tr>
+                    <td>SSC%</td>
+                    <td><input type="text" name="sper" placeholder="Type here" class="input-field"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="button-container">
+                        <input type="submit" name="submit" class="submit-button">
+                        <input type="reset" name="Reset" class="reset-button">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <!-- <div id="confirmation-msg" style="display: none; color: green;"> -->
+            <!-- Placeholder for confirmation message -->
+        <!-- </div> -->
+        
+    </div>
+    </div>
+    <script>
+        function f1(){
+            
+            
+             document.addEventListener('contextmenu', function (e) {
+             e.preventDefault();
+         });
+
+
+
+            var name=document.myform.name.value;
+            var password=document.myform.password.value;
+           var phno=document.myform.ph.value;
+            var mail=document.myform.email.value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phoneRegex = /^\d{10}$/;
+            const m = document.querySelector('.male');
+             const f = document.querySelector('.female');
+             var checkboxes = document.getElementsByName("lang");
+            var selectedLanguages = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+            var addr=document.myform.add.value;
+           var btech_per=document.myform.bper.value;
+           var inter_per=document.myform.iper.value;
+           var ssc_per=document.myform.sper.value;
+
+
+            if (name==null || name==""){
+              
+                // <span id="f_error_msg"></span>
+                 alert("Name can't be blank");
+                // document.myframe.name.focus();
+                
+                return false;
+            }
+            
+                if(password.lenght<6){
+                alert("Password must be at least 6 letters long");
+                //  document.myframe.password.focus();
+                return false;
+                } 
+                if(password==null || password=="")
+                {
+                    alert("password has to be entered");
+                    //  document.myframe.password.focus();
+                    return false;
+                }
+                if (!emailRegex.test(mail)) {
+            alert("Invalid email format");
+          
+
+            return false;
+        }
+       
+  if(!m.checked && !f.checked){
+    alert('Please choose your Gender: Male or Female ')
+    return false;
+  }
+  if (selectedLanguages.length === 0) {
+            alert("Please select at least one language");
+            return false;
+        }
+
+        if (!phoneRegex.test(phno)) {
+            alert("Invalid phone number format. Please enter a 10-digit number");
+            // document.myform.phone.focus();
+            return false;
+        }
+
+          if (addr==null || addr==""){
+              
+              // <span id="f_error_msg"></span>
+               alert("enter the address");
+              // document.myframe.name.focus();
+              
+              return false;
+          }
+          if (btech_per==null || btech_per==""){
+              
+              // <span id="f_error_msg"></span>
+               alert("Enter your btech percentage");
+              // document.myframe.name.focus();
+              
+              return false;
+          }
+          if (inter_per==null || inter_per==""){
+              
+              // <span id="f_error_msg"></span>
+               alert("Enter your intermediate percentage");
+              // document.myframe.name.focus();
+              
+              return false;
+          }
+          if (ssc_per==null || ssc_per==""){
+              
+              // <span id="f_error_msg"></span>
+               alert("Enter your SSC percentage");
+              // document.myframe.name.focus();
+              
+              return false;
+          }
+          /*
+          document.getElementById('confirmation-msg').innerText = "Your data has been recorded!";
+            document.getElementById('confirmation-msg').style.display = 'block';
+
+            // Prevent form submission
+        */
+        alert("Your data has been recorded!");
+            return false;
+            
+        return true;
+    }         
+        
+
+    </script>
+</body>
+
+</html>
